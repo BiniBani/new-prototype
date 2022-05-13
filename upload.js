@@ -16,7 +16,7 @@ function post() {
         body: JSON.stringify(params) 
     })
     .then(res => {
-        console.log(res.json()); // "console.log(res.json());"를 하면 Promise 타입의 객체를 콘솔창에 출력한다.
+        return res.json(); // "console.log(res.json());"를 하면 Promise 타입의 객체를 콘솔창에 출력한다.
         /* 그 결과는 다음과 같았다.
         [[Prototype]]: Promise
         [[PromiseState]]: "fulfilled" // fetch가 성공적으로 임무를 수행했음을 알려줌. FYI, 실패하면 "rejected".
@@ -33,4 +33,4 @@ function post() {
     });
 };
 
-
+document.getElementsByTagName('button')[0].addEventListener('click', post);
